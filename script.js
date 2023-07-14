@@ -1,24 +1,25 @@
 //function to randomly select any of the three options
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
-    switch(chocie){
+    switch(choice){
+        case 0:
+            return 'rock';
+        break;
+
         case 1:
-            console.log('rock');
+          return 'paper';
         break;
 
         case 2:
-            console.log('paper');
-        break;
-
-        case 3:
-            console.log('scissors');
+           return 'scissors';
         break;
 
         default:
-            console.log('fuck you!, Im in no mood to play');
+            getComputerChoice();
         break;
     };
 }
+
 
 // takes two inputs compare and result the winner!!
 function playRound(playerSelection, computerSelection){
@@ -39,5 +40,8 @@ function playRound(playerSelection, computerSelection){
 }
 
 const playerSelection = prompt("Type any one of these 1.rock , 2.paper, 3.scissors: ");
+console.log(`player: ${playerSelection} `);
 const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+console.log(computerSelection);
+// console.log(playRound(playerSelection, computerSelection));
+playRound(playerSelection, computerSelection);
