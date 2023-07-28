@@ -50,14 +50,25 @@ function compareChoices(playerSelection, computerSelection){
     }
 }
 
+function endGame(){
+    const buttons = document.querySelectorAll('button')
+    buttons.forEach(button => button.disabled = true);
+    
+}
+
+
 function displayWinner(){
     let displayMessage = 'you Lost, you bloody faggot';
-    if(playerWins <= 3){
+    if(playerWins === 3){
         return displayMessage = "you did it, at least u could finally win a rps game"
     }
+
+    endGame();
 
     var li = document.createElement('li');
     li.textContent = displayMessage;
     resultList.appendChild(li);
+    
+  
 
 }
