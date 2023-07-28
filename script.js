@@ -31,8 +31,9 @@ function playRound(playerSelection){
 
     rounds++;
 
-    if(rounds === 5){
+    if(rounds >= 5){
         displayWinner();
+        endGame();
     };
 
 }
@@ -51,10 +52,17 @@ function compareChoices(playerSelection, computerSelection){
 }
 
 function endGame(){
-    const buttons = document.querySelectorAll('button')
-    buttons.forEach(button => button.disabled = true);
-    
-}
+
+
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+      button.removeEventListener('click', playRound); 
+      button.style.pointerEvents = 'none';
+        
+      });
+    };
+ 
+
 
 
 function displayWinner(){
@@ -63,11 +71,11 @@ function displayWinner(){
         return displayMessage = "you did it, at least u could finally win a rps game"
     }
 
-    endGame();
-
     var li = document.createElement('li');
     li.textContent = displayMessage;
     resultList.appendChild(li);
+
+  
     
   
 

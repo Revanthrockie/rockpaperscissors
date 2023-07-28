@@ -1,5 +1,5 @@
 body{
-    background-color:yellow;
+    background-color:black;
     min-height: 100vh;
     min-width: 100%;
 }
@@ -22,6 +22,7 @@ h1{
 .btn{
     display: flex;
     flex-direction: column;
+   
 }
 
 .btn:hover{
