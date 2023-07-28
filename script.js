@@ -72,11 +72,8 @@ function displayWinner(){
     }
 
     var li = document.createElement('li');
+    li.style
     li.textContent = displayMessage;
     resultList.appendChild(li);
-
-  
-    
-  
 
 }
